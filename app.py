@@ -8,7 +8,12 @@ from sqlalchemy.orm import sessionmaker
 
 app = Flask(__name__)
 
-google_credentials = service_account.Credentials.from_service_account_file("/Users/suzukten/notional-life-422509-d1-0e8a1099fa74.json")
+google_credentials_json = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
+if google_credentials_json:
+    google_credentials_dict = json.loads(google_credentials_json)
+    google_credentials = service_account.Credentials.from_service_account_info(google_credentials_dict)
+else:
+    google_credentials = None
 openai.api_key = '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'
 
 # データベースの作成
