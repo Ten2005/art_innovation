@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+  </head>
+  <body>
+    <h1>相談AI</h1>
+    <p>0の入力で終了</p>
+    <form action="/process" method="post">
+      <label for="user_input">何かありましたか？:</label>
+      <input type="text" id="user_input" name="user_input" required>
+      <button type="submit">送信</button>
+    </form>
+    <h1>不条理な会話</h1>
+    <p>0の入力で終了</p>
+    <form action="/absurd" method="post">
+      <label for="user_input">話題:</label>
+      <input type="text" id="user_input" name="user_input" required>
+      <button type="submit">送信</button>
+    </form>
+    <h3>管理画面にログイン</h3>
+    <h4>パスワードの入力</h4>
+    <form action="/pass" method="post">
+      <label for="user_input">パスワード:</label>
+      <input type="text" id="user_input" name="user_input" required>
+      <button type="submit">ok</button>
+    </form>
+  </body>
+</html>

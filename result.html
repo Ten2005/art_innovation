@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+  </head>
+  <body>
+    <h1>相談AI</h1>
+    <h2>会話履歴</h2>
+    <ul>
+      {% for i in conversation_history %}
+        <li>{{ i }}</li>
+      {% endfor %}
+    </ul>
+    <form action="/process" method="post">
+        <label for="user_input">回答:</label>
+        <input type="text" id="user_input" name="user_input" required>
+        <button type="submit">送信</button>
+    </form>
+  </body>
+</html>

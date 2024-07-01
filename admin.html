@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+  </head>
+  <body>
+    <h1>管理用画面</h1>
+    <h2>会話履歴</h2>
+    {% for i in data_ab %}
+    <li>{{ i }}</li>
+    {% endfor %}
+    <form action="/return_index" method="post">
+      <label for="user_input">ホームに戻る</label>
+      <button type="submit">ok</button>
+    </form>
+    <p>削除をしたいデータの各IDを数字で入力し、間に/を入力して下さい（全て半角）</p>
+    <form action="/delete" method="post">
+      <label for="admin_input">削除</label>
+      <input type="text" id="numbers" name="numbers" required>
+      <button type="submit">ok</button>
+    </form>
+  </body>
+</html>
